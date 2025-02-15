@@ -6,18 +6,37 @@
 // 2. Window resize handlers - preventing excessive calculations as the window is being resized
 // 3. Save drafts - waiting until the user stops typing before auto-saving
 
-function getApiCall() {
-  console.log("API CALL");
+function getApiCall(searchQuery) {
+  console.log(`I'm searching ${searchQuery}`);
 }
 
 const search = document.querySelector("#search");
 
-let debounceTimeout;
+// let debounceTimeout;
 
-search.addEventListener("input", () => {
-  clearTimeout(debounceTimeout);
+// search.addEventListener("input", () => {
+//   clearTimeout(debounceTimeout);
 
-  debounceTimeout = setTimeout(() => {
-    getApiCall();
-  }, 1000);
+//   debounceTimeout = setTimeout(() => {
+//     getApiCall();
+//   }, 1000);
+// });
+
+const debounceGetApi = debounce(getApiCall, 400);
+
+search.addEventListener("input", (e) => {
+  debounceGetApi(e.target.value);
 });
+
+function debounce(cb, delay) {
+  let timeoutId;
+  return (...args) => {
+    if (timeoutId) {
+      clearTimeout(timeoutId);
+    }
+
+    timeoutId = setTimeout(() => {
+      cb(...args);
+    }, delay);
+  };
+}
