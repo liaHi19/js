@@ -1,8 +1,47 @@
+## Lexical scope (also known as static scope) is where the accessibility of variables is determined by their location within the source code at the time of writing (during lexing phase) - not where functions are called from.
+
+#### Key characteristics:
+
+1. Inner scopes can access outer scopes
+2. Outer scopes cannot access inner scopes
+3. Sibling scopes cannot access each other
+4. The scope is fixed at write-time, not run-time
+
+#### The lexical scope is particularly important because:
+
+1. It makes code more predictable
+2. Enables closure mechanisms
+3. Helps with encapsulation
+4. Makes debugging easier as variable scope is clear from the code structure
+
+## Hoisting is a JavaScript behavior where variable and function declarations are moved to the top of their respective scopes during the compilation phase, before the code is executed.
+
+#### Key points about hoisting:
+
+1. Function declarations:
+
+- Fully hoisted with their body
+- Can be called before declaration
+
+2. var variables:
+
+- Declaration is hoisted
+- Initialized as undefined
+- Assignment stays in place
+
+3. let and const:
+
+- Declarations are hoisted
+- Not initialized (enter TDZ)
+- Cannot be accessed before declaration
+
+4. Function expressions aren't hoisted
+
 ## TDZ
 
 ### The Temporal Dead Zone (TDZ) is a behavior in JavaScript that occurs with variables declared using let and const. It's the period between entering a scope (where a variable is declared) and the actual declaration being processed.
 
-##### Key points about TDZ:
+#### Key points about TDZ:
 
 1.  Variables declared with let and const are hoisted but not initialized
 2.  Accessing them before declaration results in a ReferenceError
