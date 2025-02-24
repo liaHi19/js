@@ -1,0 +1,21 @@
+.parent {
+  width: 90vw;
+  margin: 2rem auto 0;
+  display: grid;
+  background: wheat;
+  grid-template-columns: repeat(3, 1fr);
+  place-items: center;
+  padding: 1rem;
+  border: thick double #32a1ce;
+
+  & div {
+    display: flex;
+    width: 150px;
+    height: 150px;
+    font-size: 2rem;
+    background: cadetblue;
+    align-items: center;
+    justify-content: center;
+    border: thick double wheat;
+  }
+}
