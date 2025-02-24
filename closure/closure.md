@@ -48,3 +48,28 @@
 3.  The TDZ ends when the variable is actually declared in the code
 
 #### TDZ doesn't affect variables declared with var because they are hoisted and automatically initialized with undefined.
+
+## An IIFE (Immediately Invoked Function Expression) is a JavaScript pattern where a function is defined and executed immediately after creation.
+
+#### Key points for using IIFE:
+
+1. Data privacy / encapsulation
+2. Avoiding global scope pollution
+3. Creating module patterns
+4. Capturing variable values at execution time
+5. Executing code once without creating reusable functions
+
+## A closure is a function that remembers and can access its lexical scope (the variables defined in its parent function) even when that function has finished executing.
+
+#### Key characteristics of closures:
+
+1. They "close over" variables from their containing scope
+2. They maintain access to these variables even after the outer function has returned
+3. Each closure has its own separate lexical environment
+
+#### Common practical uses:
+
+- Creating private variables and encapsulation
+- Maintaining state in event handlers
+- Implementing callbacks and higher-order functions
+- Factory functions (creating objects with private data)
